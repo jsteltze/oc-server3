@@ -250,115 +250,118 @@ foreach ($opt['template']['locales'] as $k => $lang) {
                 <!-- NAVIGATION -->
                 <!-- Navigation Level 3 -->
                 <div class="nav3">
+                    <div style="padding-bottom: 42px;">
 <?php
-                    //SubNavigation
-                    if (isset($menu[$pageidx]['submenu'])) {
-                        ?>
-                        <ul>
-                            <li class="title">{t}Main menu{/t}</li>
+                        //SubNavigation
+                        if (isset($menu[$pageidx]['submenu'])) {
+                            ?>
+                            <ul>
+                                <li class="title">{t}Main menu{/t}</li>
 <?php
-                            mnu_EchoSubMenu($menu[$pageidx]['submenu'], $tplname, 1, false); ?>
-                        </ul>
+                                mnu_EchoSubMenu($menu[$pageidx]['submenu'], $tplname, 1, false); ?>
+                            </ul>
 <?php
 
-                    }
+                        }
 ?>
-                    <!-- Länderknoten -->
-                    <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('countriesdiv');">{t}Country sites{/t} &gt;</p>
-                    <div style="text-align: center; display: none;" class="nodeflags" id="countriesdiv">
-                        <a href="http://www.opencaching.cz" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-cz.png" width="100" height="22" /></a><br />
-                        <a href="https://www.opencaching.de" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-de.png" width="100" height="22" /></a><br />
-                        <a href="http://www.opencaching.nl" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-nl.png" width="100" height="22" /></a><br />
-                        <a href="https://opencaching.pl" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-pl.png" width="100" height="22" /></a><br />
-                        <a href="http://www.opencaching.ro" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-ro.png" width="100" height="22" /></a><br />
-                        <a href="https://opencache.uk" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-org-uk.png" width="100" height="22" /></a><br />
-                        <a href="http://www.opencaching.us" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-us.png" width="100" height="22" /></a>
-                    </div>
-                    <script>initMenu('countriesdiv')</script>
-
-                    <!-- Paypalbutton -->
-<?php
-                    if (isset($opt['page']['showdonations']) && $opt['page']['showdonations']) {
-                        ?>
-                        <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('donodiv');">{t}Donations{/t} &gt;</p>
-                        <div style="margin-top:16px;width:100%;text-align:center; display: none;" id="donodiv">
-                            <a href="articles.php?page=donations">
-                            <img src="resource2/ocstyle/images/misc/donate.gif" alt="{t}Donations{/t}" style="border:0px;" />
-                            </a><br />
-                            &nbsp;
+                        <!-- Länderknoten -->
+                        <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('countriesdiv');">{t}Country sites{/t} &gt;</p>
+                        <div style="text-align: center; display: none;" class="nodeflags" id="countriesdiv">
+                            <a href="http://www.opencaching.cz" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-cz.png" width="100" height="22" /></a><br />
+                            <a href="https://www.opencaching.de" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-de.png" width="100" height="22" /></a><br />
+                            <a href="http://www.opencaching.nl" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-nl.png" width="100" height="22" /></a><br />
+                            <a href="https://opencaching.pl" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-pl.png" width="100" height="22" /></a><br />
+                            <a href="http://www.opencaching.ro" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-ro.png" width="100" height="22" /></a><br />
+                            <a href="https://opencache.uk" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-org-uk.png" width="100" height="22" /></a><br />
+                            <a href="http://www.opencaching.us" target="_blank"><img src="resource2/ocstyle/images/nodes/oc-us.png" width="100" height="22" /></a>
                         </div>
-                        <script>initMenu('donodiv')</script>
+                        <script>initMenu('countriesdiv')</script>
+
+                        <!-- Paypalbutton -->
+<?php
+                        if (isset($opt['page']['showdonations']) && $opt['page']['showdonations']) {
+                            ?>
+                            <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('donodiv');">{t}Donations{/t} &gt;</p>
+                            <div style="margin-top:16px;width:100%;text-align:center; display: none;" id="donodiv">
+                                <a href="articles.php?page=donations">
+                                <img src="resource2/ocstyle/images/misc/donate.gif" alt="{t}Donations{/t}" style="border:0px;" />
+                                </a><br />
+                                &nbsp;
+                            </div>
+                            <script>initMenu('donodiv')</script>
 <?php
 
-                    }
+                        }
 ?>
 
-                    <!-- Social Media -->
+                        <!-- Social Media -->
 <?php
-                    if (isset($opt['page']['showsocialmedia']) && $opt['page']['showsocialmedia']) {
-                        ?>
-                    <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('socialdiv');">{t}Social media{/t} &gt;</p>
-                    <div style="margin-top: 10px; margin-bottom: 14px; margin-left: auto; margin-right: auto; text-align: center; display: none;" id="socialdiv">
-                        <table style="margin-left: auto; margin-right: auto;">
-                            <tr>
-                                <td class="mediumsmalltext">{t}Follow us:{/t}</td>
-                                <td><a href="http://blog.opencaching.de/feed"><img src="resource2/{style}/images/media/16x16-feed.png" width="16" height="16" /></a></td>
-                                <td><a href="https://twitter.com/opencaching"><img src="resource2/{style}/images/media/16x16-twitter.png" width="16" height="16"  /></a></td>
-                                <td><a href="https://www.facebook.com/opencaching.de"><img src="resource2/{style}/images/media/16x16-facebook.png" width="16" height="16"  /></a></td>
-                            </tr>
-                            <tr>
-                                <td class="mediumsmalltext" colspan="5" style="padding-top:0.6em; text-align:left">{t}Join discussions:{/t}</td>
-                            </tr>
-                        </table>
-                        <table style="margin-left: auto; margin-right: auto;">
-                            <tr>
-                                <td>
-                                    <a href="http://forum.opencaching.de/">
-                                        <img src="resource2/{style}/images/oclogo/16x16-oc_logo.png"/>
-                                    </a>
-                                </td>
-                                <td style="text-align: left">
-                                    <a href="http://forum.opencaching.de/">
-                                        {t}Opencaching Forum{/t}
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="https://www.facebook.com/groups/198752500146032/">
-                                        <img src="resource2/{style}/images/media/16x16-facebook.png"/>
-                                    </a>
-                                </td>
-                                <td style="text-align: left">
-                                    <a href="https://www.facebook.com/groups/198752500146032/">
-                                        {t}Facebook Group{/t}
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="https://github.com/OpencachingDeutschland/oc-server3">
-                                        <img src="resource2/{style}/images/media/16x16-github.png"/>
-                                    </a>
-                                </td>
-                                <td style="text-align: left">
-                                    <a href="https://github.com/OpencachingDeutschland/oc-server3">GitHub</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <script>initMenu('socialdiv')</script>
+                        if (isset($opt['page']['showsocialmedia']) && $opt['page']['showsocialmedia']) {
+                            ?>
+                        <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('socialdiv');">{t}Social media{/t} &gt;</p>
+                        <div style="margin-top: 10px; margin-bottom: 14px; margin-left: auto; margin-right: auto; text-align: center; display: none;" id="socialdiv">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr>
+                                    <td class="mediumsmalltext">{t}Follow us:{/t}</td>
+                                    <td><a href="http://blog.opencaching.de/feed"><img src="resource2/{style}/images/media/16x16-feed.png" width="16" height="16" /></a></td>
+                                    <td><a href="https://twitter.com/opencaching"><img src="resource2/{style}/images/media/16x16-twitter.png" width="16" height="16"  /></a></td>
+                                    <td><a href="https://www.facebook.com/opencaching.de"><img src="resource2/{style}/images/media/16x16-facebook.png" width="16" height="16"  /></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="mediumsmalltext" colspan="5" style="padding-top:0.6em; text-align:left">{t}Join discussions:{/t}</td>
+                                </tr>
+                            </table>
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr>
+                                    <td>
+                                        <a href="http://forum.opencaching.de/">
+                                            <img src="resource2/{style}/images/oclogo/16x16-oc_logo.png"/>
+                                        </a>
+                                    </td>
+                                    <td style="text-align: left">
+                                        <a href="http://forum.opencaching.de/">
+                                            {t}Opencaching Forum{/t}
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://www.facebook.com/groups/198752500146032/">
+                                            <img src="resource2/{style}/images/media/16x16-facebook.png"/>
+                                        </a>
+                                    </td>
+                                    <td style="text-align: left">
+                                        <a href="https://www.facebook.com/groups/198752500146032/">
+                                            {t}Facebook Group{/t}
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://github.com/OpencachingDeutschland/oc-server3">
+                                            <img src="resource2/{style}/images/media/16x16-github.png"/>
+                                        </a>
+                                    </td>
+                                    <td style="text-align: left">
+                                        <a href="https://github.com/OpencachingDeutschland/oc-server3">GitHub</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <script>initMenu('socialdiv')</script>
 <?php
 
-                    }
+                        }
 ?>
 
-                    <!-- Datalicense -->
-                    <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('licensediv');">{t}Datalicense{/t} &gt;</p>
-                    <div style="margin:20px 0 16px 0; width:100%; text-align:center; display: none;" id="licensediv">
-                        {license_disclaimer}
+                        <!-- Datalicense -->
+                        <p class="sidebar-maintitle" style="cursor: pointer;" onclick="javascript:toggleMenu('licensediv');">{t}Datalicense{/t} &gt;</p>
+                        <div style="margin:20px 0 16px 0; width:100%; text-align:center; display: none;" id="licensediv">
+                            {license_disclaimer}
+                        </div>
+                        <script>initMenu('licensediv')</script>
+
                     </div>
-                    <script>initMenu('licensediv')</script>
 
                     <!-- page statistics -->
                     <div class="sidebar-txtbox-noshade" style="position: absolute; bottom: 50px;">
